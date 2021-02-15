@@ -17,7 +17,9 @@ spec:
   rbac:
     defaultPolicy: role:readonly
     policy: |
-      g, system:cluster-admins, role:admin
+      # The cluster-admins and argocd-admins groups don't exist and
+      # have to be created.
+      g, cluster-admins, role:admin
       g, argocd-admins, role:admin
     scopes: '[groups]'
   server:
