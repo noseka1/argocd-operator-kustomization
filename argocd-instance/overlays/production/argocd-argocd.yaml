@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  name: argocd
+spec:
+  # TODO
+  #server:
+  #  autoscale:
+  #    enabled: true
+  #    hpa:
+  #      maxReplicas: 6
+  #      minReplicas: 3
+  grafana:
+    size: 3
+  prometheus:
+    size: 3
+  ha:
+    enabled: true

@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  name: argocd
+spec:
+  applicationInstanceLabelKey: argocd.argoproj.io/instance
+  dex:
+    openShiftOAuth: true
+  grafana:
+    enabled: true
+    route:
+      enabled: true
+  prometheus:
+    enabled: true
+    route:
+      enabled: true
+  rbac:
+    defaultPolicy: role:readonly
+    policy: |
+      g, system:cluster-admins, role:admin
+      g, argocd-admins, role:admin
+    scopes: '[groups]'
+  server:
+    route:
+      enabled: true
