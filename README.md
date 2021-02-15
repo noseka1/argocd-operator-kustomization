@@ -13,5 +13,5 @@ $ oc apply --kustomize argocd-operator/base
 
 Deploy a Argo CD instance:
 ```
-$ oc apply --kustomize argocd-instance/base
+$ oc apply --kustomize argocd-instance/overlays/basic
 ```
